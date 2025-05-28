@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "private": true,
+  "name": "@mopri/schema",
+  "version": "1.0.0",
+  "description": "Shared schemas and types for mopri, facilitating consistent data structures and type safety across both frontend and backend components.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && npx --package typescript tsc",
+    "dev": "rm -rf dist && npx --package typescript tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Cornell Ziepel",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@asteasolutions/zod-to-openapi": "^7.1.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}

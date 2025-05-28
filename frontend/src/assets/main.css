@@ -1,0 +1,231 @@
+/*
+ * SPDX-FileCopyrightText: © 2025 Cornell Ziepel <research@cornell-ziepel.de>
+ *
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+.print-logo {
+  display: none;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+/* print.css */
+
+/* General styles for print */
+@media print {
+  body {
+    margin: 0;
+    padding: 20mm; /* Add padding to avoid content being cut off */
+    font-size: 12pt; /* Set a readable font size */
+    line-height: 1.5; /* Improve readability */
+    color: #000; /* Ensure text is black */
+    background: none; /* Remove background colors */
+  }
+
+  /* Hide elements that should not be printed */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Set page size to A4 */
+  @page {
+    size: A4;
+    margin: 20mm;
+    margin-top: 20mm;
+    margin-bottom: 20mm;
+  }
+
+  /* Hide elements not needed in print report */
+  header,
+  footer,
+  button {
+    display: none !important;
+  }
+
+  /* Style for main content */
+  .print-content {
+    width: 100%; /* Ensure content takes full width */
+    page-break-inside: avoid; /* Avoid breaking inside elements */
+  }
+
+  .print-logo {
+    display: block;
+    text-align: center; /* Center the logo */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+    position: relative; /* Positioning context for absolute positioning if needed */
+  }
+
+  .print-logo img {
+    max-width: 100%; /* Ensure the logo does not exceed the page width */
+    height: auto; /* Maintain aspect ratio */
+    width: 200px; /* Set a specific width for the logo */
+    /* You can adjust the width as needed */
+  }
+
+  /* Ensure each .sheet starts on a new page */
+  .sheet {
+    page-break-before: avoid;
+    page-break-after: always;
+    padding-top: 20mm;
+  }
+
+  .sheet .container {
+    margin: 0;
+    margin-top: 0 !important;
+    max-width: auto;
+    padding: 0;
+  }
+
+  /* Additional styles for specific elements */
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid; /* Avoid breaking after headings */
+    text-align: center;
+    font-size: 1.5em !important;
+    margin: 10px 0; /* Reduce margin for headings */
+  }
+
+  /* Style for tables */
+  table {
+    width: 100% !important; /* Ensure the table takes full width */
+    border-collapse: collapse; /* Collapse borders */
+    page-break-inside: auto; /* Allow page breaks inside the table */
+  }
+
+  .table > :not(caption) > * > * {
+    padding: 10mm;
+  }
+
+  th,
+  td {
+    border: 1px solid #000; /* Add borders to cells */
+    padding: 4px; /* Add padding for readability */
+    text-align: left; /* Align text to the left */
+    font-size: 0.6em; /* Set font size for table cells */
+    overflow-wrap: break-word; /* Allow long words to break */
+    word-wrap: break-word; /* For older browsers */
+    white-space: normal; /* Allow text to wrap */
+  }
+
+  th {
+    background-color: #f2f2f2; /* Light gray background for headers */
+    font-weight: bold; /* Bold text for headers */
+  }
+
+  tr {
+    page-break-inside: avoid; /* Avoid breaking rows */
+    page-break-after: auto; /* Allow breaking after rows */
+  }
+
+  tr .wrap {
+    width: 80mm;
+  }
+
+  .word-wrap {
+    word-break: break-all;
+  }
+  .word-wrap span {
+    display: block;
+    margin-left: 0 !important;
+  }
+
+  tr .wrap-sm {
+    width: 40mm;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+
+  td,
+  th {
+    page-break-inside: avoid; /* Avoid breaking inside cells */
+    word-wrap: break-word;
+  }
+  /* Images */
+  img {
+    max-width: 100%; /* Ensure images fit within the page */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Lists */
+  /* Style for list items */
+  li {
+    margin: 10px 0; /* Add margin between list items */
+    page-break-inside: avoid; /* Prevent breaking inside list items */
+    list-style: none;
+  }
+
+  /* Remove default Bootstrap margins and paddings */
+  .list-group {
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+  }
+
+  .list-group-item {
+    padding: 5px 10px; /* Reduce padding */
+    margin: 0; /* Remove margin */
+    border: none; /* Remove borders if not needed */
+    font-size: 0.8em;
+  }
+
+  .badge {
+    font-size: 0.8em; /* Reduce font size of badges */
+    padding: 2px 5px; /* Reduce padding of badges */
+  }
+
+  /* Optional: Hide elements that are not necessary for print */
+  .d-flex {
+    display: block; /* Change flex to block to stack items */
+  }
+
+  /* Make all columns full width */
+  .aggregated-figures .row > [class*='col-']:not(.col-md-12) {
+    width: 50%; /* Set width to 100% for all columns */
+    margin-bottom: 10px; /* Optional: Add some space between rows */
+  }
+
+  /* General styles for the card */
+  .card {
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    box-shadow: none; /* Remove shadow */
+    page-break-inside: avoid;
+  }
+
+  .card-header {
+    font-size: 1.2em; /* Adjust header font size */
+    margin-bottom: 5px; /* Reduce space below header */
+  }
+
+  .card-body {
+    padding: 5px; /* Reduce padding in card body */
+  }
+
+  .card-title {
+    font-size: 1.5em; /* Adjust title font size */
+    margin: 0; /* Remove margin */
+  }
+}

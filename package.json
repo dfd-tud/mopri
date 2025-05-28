@@ -1,0 +1,9 @@
+{
+  "name": "mopri",
+  "version": "1.0.0",
+  "description": "A comprehensive toolchain for analyzing mobile applications to identify and assess privacy violations.",
+  "private": true,
+  "keywords": [],
+  "author": "Cornell Ziepel",
+  "license": "GPL-3.0-or-later"
+}

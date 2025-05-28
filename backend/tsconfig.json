@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src/",
+    // Base Options recommended for all projects
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+		"moduleResolution": "NodeNext",
+    "verbatimModuleSyntax": false,
+    // Enable strict type checking so you can catch bugs early
+    "strict": false,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    // Transpile our TypeScript code to JavaScript
+    "module": "NodeNext",
+    "outDir": "dist",
+    "lib": [
+      "es2022"
+    ]
+  },
+  // Include the necessary files for your project
+  "include": [
+    "src",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+

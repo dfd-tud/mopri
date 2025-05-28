@@ -1,0 +1,31 @@
+version=1
+
+# package.json 
+[[annotations]]
+path = [
+  "**/package.json"
+]
+SPDX-FileCopyrightText = "© 2025 Cornell Ziepel <research@cornell-ziepel.de>"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+# Config files 
+[[annotations]]
+path = [
+    "**/tsconfig*",
+    "frontend/vite.config.ts",
+    "frontend/env.d.ts",
+    "frontend/.prettierrc.json",
+    "frontend/.env",
+    "frontend/.eslintrc.cjs",
+    "frontend/.vscode/extensions.json"
+]
+SPDX-FileCopyrightText = "NONE"
+SPDX-License-Identifier = "CC0-1.0"
+
+# auto generated files 
+[[annotations]]
+path = [
+    "pnpm-lock.yaml"
+]
+SPDX-FileCopyrightText = "NONE"
+SPDX-License-Identifier = "CC0-1.0"
