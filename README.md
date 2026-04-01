@@ -27,7 +27,7 @@ To get started with mopri, follow these steps:
 2. **Clone the repository**:
 
    ```bash
-   git clone https://dud-scm.inf.tu-dresden.de/cornell.ziepel/mopri.git 
+   git clone https://github.com/dfd-tud/mopri
    cd mopri
    ```
 3. **Install dependencies**:
